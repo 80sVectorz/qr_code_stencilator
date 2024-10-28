@@ -1,0 +1,17 @@
+imperial_mode = true
+
+[printing]
+dpi = 300
+margins = 1.0 # How much space there should be between the stencil design and the edges of the paper. Note stencil designs already have a tiny default margin that this setting does not effect
+stroke_width = 0.1 # Physical stoke width
+
+
+# Presets support definining custom paper_formats
+[paper_formats]
+# template: format = [width , height] width and height should be in centimeters or in inches depending on if they are in paper_formats.metric or paper_formats.imperial
+# All formats should be stored in portrait mode meaning the width is the smalled dimension or width and height are equal.
+
+[paper_formats.metric]
+A4=[21.0,29.7]
+
+[paper_formats.imperial]

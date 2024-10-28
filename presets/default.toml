@@ -1,0 +1,16 @@
+# IMPORTANT:
+# This file may be changed in updates so any custom changes may be lost. Modify at your own risk.
+
+imperial_mode=false
+
+[paper]
+format="A4"
+
+[printing]
+dpi = 300
+margins = 1.0
+stroke_width = 0.1
+
+[design]
+diagonal_line_fill_mode = "OUTSIDE"
+diagonal_lines_spacing = 0.5

@@ -1,0 +1,39 @@
+# IMPORTANT:
+# This file may be changed in updates so any custom changes may be lost. Modify at your own risk.
+#
+# This is an example preset file. Presets allow you to customize the outputs of the generator.
+# A preset doesn't have to include all parameters. Only the parameters you want to change from the default settings have to be added.
+####################
+
+imperial_mode = false # Set this to true if you want to use inches instead of the superior metric centimeter
+# NOTE:  Units don't have any impact as all values are converted to metric under the hood.
+# They are just here for quality of life. Burger support comming soon
+
+[paper]
+format="A4" # Available formats are defined in paper_formats.toml or inside a preset file (See bottom of this file)
+
+[printing]
+dpi = 300
+margins = 1.0 # How much space there should be between the stencil design and the edges of the paper. Note stencil designs already have a tiny default margin that this setting does not effect
+stroke_width = 0.1 # Physical stoke width
+
+[design]
+diagonal_line_fill_mode = "OUTSIDE" # How to apply a diagonal line pattern for better distinguishable areas.
+# Can be one of the folowing:
+# OUTSIDE  : fill the solid area of the stencil with the pattern.
+# INSIDE   : fill the holes of the stencil with the pattern.
+# DISABLED : don't use diagonal lines fill pattern.
+diagonal_lines_spacing = 0.5 # Physical space between each diagonal line
+
+####################
+
+# Presets support definining custom paper_formats
+[paper_formats]
+# template: format = [width , height] width and height should be in centimeters or in inches depending on if they are in paper_formats.metric or paper_formats.imperial
+# All formats should be stored in portrait mode meaning the width is the smalled dimension or width and height are equal.
+# If a format is found in both metric and imperial the metric version will be used.
+
+[paper_formats.metric]
+A4 = [21.0 , 29.7]
+
+[paper_formats.imperial]

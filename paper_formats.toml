@@ -1,0 +1,12 @@
+# IMPORTANT:
+# This file may be changed in updates so any custom changes may be lost. Modify at your own risk.
+# It's recommended to add custom formats in personal preset files.
+
+[paper_formats]
+# template: format = [width , height] width and height should be in centimeters or in inches depending on if they are in paper_formats.metric or paper_formats.imperial
+# All formats should be stored in portrait mode meaning the width is the smalled dimension or width and height are equal.
+
+[paper_formats.metric]
+A4=[21.0,29.7]
+
+[paper_formats.imperial]
