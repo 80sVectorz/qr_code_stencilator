@@ -1,4 +1,5 @@
 outputs/
+documentation/example_gif_frames
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
