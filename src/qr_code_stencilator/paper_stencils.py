@@ -106,7 +106,7 @@ class PaperStencilGenerator:
         self.design_fill_pattern_mode = design_fill_pattern_mode
         self.design_fill_pattern_gaps_px = design_fill_pattern_gaps_px
 
-    def generate_stencil(self, raw_stencil: np.ndarray) -> np.ndarray:
+    def generate_stencil(self, raw_stencil: np.ndarray, index: int) -> np.ndarray:
         paper_stencil = np.ones(self.paper_size_px[::-1])
         upscaled_stencil = resize_stencil(raw_stencil,self.print_target_qr_code_width_px)
 
@@ -132,6 +132,12 @@ class PaperStencilGenerator:
             paper_stencil[center_rect][fill_pattern_lines[center_rect] & fill_pattern_mask] = 0
 
         paper_stencil[center_rect][stencil_edges>0] = 0
-        
+
+        for i in range(index+1):
+            try:
+                paper_stencil = cv2.circle(paper_stencil,(round(self.print_margin_px+stroke_width+2.5*stroke_width*i),round(py-2.1*stroke_width)),stroke_width//2,0,stroke_width)
+            except:
+                pass
+
         return paper_stencil
     

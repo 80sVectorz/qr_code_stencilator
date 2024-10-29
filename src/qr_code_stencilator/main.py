@@ -138,7 +138,7 @@ See presets/example_preset.toml for more info.
     for i,s in enumerate(raw_stencils):
         try:
             print_debug(f"INFO: Generating paper stencil #{i+1}")
-            paper_stencils.append(psg.generate_stencil(s))
+            paper_stencils.append(psg.generate_stencil(s,i))
         except Exception as e:
             print_error(f"ERROR: Failed to generate paper stencil #{i+1}")
             print_debug(traceback.format_exc())
