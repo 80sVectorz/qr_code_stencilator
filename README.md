@@ -1,6 +1,6 @@
 # QR Code Stencilator
 
-![Example](https://github.com/80sVectorz/qr_code_stencilator/blob/main/documentation/example.gif?raw=true)
+<img src="https://github.com/80sVectorz/qr_code_stencilator/blob/main/documentation/example.gif?raw=true" width="500" />
 
 A tool that lets you generate the stencils to paint a QR code with two colors
 
