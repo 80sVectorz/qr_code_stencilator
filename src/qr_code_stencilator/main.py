@@ -67,10 +67,10 @@ See presets/example_preset.toml for more info.
     with open(paper_formats_file_path,'r') as f:
         paper_formats_toml = '\n'.join(f.readlines())
     
-    presets_path = Path(top_level_path)/'presets'
+    presets_path = top_level_path/'presets'
 
     default_preset_file = presets_path/'default.toml'
-    if not Path(default_preset_file).is_file():
+    if not default_preset_file.is_file():
         print_error("ERROR: default.toml missing")
 
     preset_file_paths = [default_preset_file]
