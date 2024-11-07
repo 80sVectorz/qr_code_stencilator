@@ -15,7 +15,7 @@ def merge_data(base: dict,donor: dict):
     """
 
     for k, v in donor.items():
-        if v is dict:
+        if isinstance(v,dict):
             merge_data(base[k],v)
         else:
             base[k] = v
@@ -37,9 +37,9 @@ class PaperStencilGeneratorPreset(DotMap):
         ])
 
         for k, v in preset_data.items():
-            if v is dict and k not in excluded_keys:
+            if isinstance(v,dict) and k not in excluded_keys:
                 PaperStencilGeneratorPreset.convert_preset_to_metric(preset_data[k])
-            elif (v is float or v is int) and k not in excluded_keys:
+            elif (isinstance(v,float) or isinstance(v,int)) and k not in excluded_keys:
                 preset_data[k] *= INCH_TO_CM
 
     @classmethod
@@ -48,7 +48,7 @@ class PaperStencilGeneratorPreset(DotMap):
         imperial_mode = presets[0].imperial_mode
         final_data = presets[0]
         for preset_data in presets: 
-            if preset_data.imperial_mode is bool:
+            if isinstance(preset_data.imperial_mode,bool):
                 imperial_mode = preset_data.imperial_mode
             if imperial_mode:
                 PaperStencilGeneratorPreset.convert_preset_to_metric(preset_data)
